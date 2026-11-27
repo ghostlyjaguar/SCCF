@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add subordinate intelligence requirements v0.1.0 (objective-centric reasoning, probabilistic validation and risk-adjusted resource allocation), with machine-readable rules and synthetic evaluation scenarios. No charter or catalog changes; no detection engine or empirical performance claim.
+
 ## 0.2.0 (foundational working draft)
 
 - Establish founding charter v1.0.0 and explicit amendment governance.
