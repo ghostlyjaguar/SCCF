@@ -1,0 +1,32 @@
+name: SCCF research benchmark
+on:
+  pull_request:
+    branches: [main]
+    paths: ['research/**', '.github/workflows/research.yml']
+  workflow_dispatch:
+  schedule:
+    - cron: '17 16 * * 1'
+permissions:
+  contents: read
+concurrency:
+  group: sccf-research-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Run reproducibility tests
+        run: python3 -m unittest discover -s research -p 'test_*.py' -v
+      - name: Generate benchmark results
+        run: |
+          python3 research/benchmark.py
+          cat research-results/report.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sccf-research-report
+          path: research-results/
+          retention-days: 30
