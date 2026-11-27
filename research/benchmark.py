@@ -82,7 +82,7 @@ def main():
     for name,m in result["results"].items():
         lines.append(f"| {name} | {m['cases']} | {m['observations_purchased']} | {m['fp']} | {m['fn']} | {m['decision_loss']:.1f} | {m['brier']:.4f} |")
     lines += ["","Repeated fixed-seed runs are reproducibility checks, not new scientific findings.",
-              "No LLMs, live telemetry, paid APIs or automatic interventions were used."]
+              "No LLMs, live telemetry or automatic interventions were used."]
     (out/"report.md").write_text("\n".join(lines)+"\n")
     print("\n".join(lines))
 
