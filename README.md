@@ -18,9 +18,9 @@ Use the [machine-readable charter](foundation/charter.json) and [composition sch
 
 The repository is intended for public defensive research. Licensing is pending the maintainer's approval; no open-source license is yet granted. External sources retain their respective rights. Do not submit confidential telemetry, personal information, credentials, operational offensive instructions, or unredacted incident records.
 
-## Research operations and funding
+## Research operations
 
-The [research operations pilot](research/README.md) evaluates bounded evidence allocation using reproducible synthetic experiments. See [workflow runs](https://github.com/ghostlyjaguar/SCCF/actions) for reports after activation and [funding policy](FUNDING.md) for voluntary support and financial safeguards. No scientific acceptance or real-world efficacy is inferred from the pilot.
+The [research operations pilot](research/README.md) evaluates bounded evidence allocation using reproducible synthetic experiments. See [workflow runs](https://github.com/ghostlyjaguar/SCCF/actions) for reports after activation. No scientific acceptance or real-world efficacy is inferred from the pilot.
 
 ## Related work
 
