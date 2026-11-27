@@ -1,0 +1,29 @@
+name: SCCF validation
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  foundation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check foundational baseline
+        run: |
+          git diff --exit-code 1d47df7b1a8188b23b9e9c2fbc3111e3804e3874 HEAD -- FOUNDATION.md foundation/charter.json
+          git cat-file -e HEAD:taxonomy/compositions/SCCF-0001.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install validation dependency
+        run: python -m pip install 'jsonschema==4.25.1'
+      - name: Validate catalog
+        run: python validation/validate.py
+      - name: Run synthetic policy and structural tests
+        run: python -m unittest discover -s validation -p 'test_*.py' -v
