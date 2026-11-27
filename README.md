@@ -4,7 +4,7 @@
 
 SCCF classifies the emergent strategic functions of relationships among adversarial activities for defensive threat analysis. The [founding charter](FOUNDATION.md) fixes the project's mission and scope. It complements MITRE ATT&CK and Attack Flow; it does not claim to replace them or establish novelty.
 
-Start with the [founding charter](FOUNDATION.md), [the specification](specification/ontology.md), [the candidate catalog](taxonomy/compositions/SCCF-0001.json), and [contribution rules](CONTRIBUTING.md). AI agents should consult [AGENTS.md](AGENTS.md).
+Start with the [founding charter](FOUNDATION.md), [the specification](specification/ontology.md), [the candidate catalog](taxonomy/compositions/SCCF-0001.json), [intelligence requirements](specification/intelligence-requirements.md), and [contribution rules](CONTRIBUTING.md). AI agents should consult [AGENTS.md](AGENTS.md).
 
 ## Validate
 
@@ -12,7 +12,7 @@ Install Python 3.10+ and `jsonschema` (`python -m pip install jsonschema`), then
 
 ## AI and research feedback
 
-Use the [machine-readable charter](foundation/charter.json) and [composition schema](schemas/composition.schema.json). Submit evidence-backed feedback through [issues](https://github.com/ghostlyjaguar/SCCF/issues) or a pull request. Proposed classes are not accepted by automation. Public visibility does not guarantee AI adoption.
+Use the [machine-readable charter](foundation/charter.json), [composition schema](schemas/composition.schema.json), and [machine-readable intelligence requirements](specification/intelligence-requirements.json). Submit evidence-backed feedback through [issues](https://github.com/ghostlyjaguar/SCCF/issues) or a pull request. Proposed classes are not accepted by automation. Public visibility does not guarantee AI adoption.
 
 ## Research and reuse
 

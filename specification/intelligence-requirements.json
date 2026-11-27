@@ -1,0 +1,121 @@
+{
+  "specification": "SCCF intelligence requirements",
+  "version": "0.1.0",
+  "status": "draft",
+  "normative_parent": "foundation/charter.json",
+  "parent_version": "1.0.0",
+  "scope": "Model-agnostic requirements for defensive systems applying SCCF; not a requirement that the taxonomy itself implement a detection or response engine.",
+  "requirements": [
+    {
+      "id": "IR-01",
+      "name": "Objective-centric intelligence",
+      "charter": [
+        "F-01",
+        "F-02",
+        "F-03",
+        "F-07"
+      ],
+      "rules": [
+        "Distinguish observations, functional effects, causal relationships, attribution and inferred objectives; give each claim its own evidence and assessment.",
+        "Generate candidate strategic compositions and competing explanations, including independent or benign events and insufficient evidence; do not force classification.",
+        "Distinguish known class matches from novel candidate compositions; a novel hypothesis is not an accepted catalog entry."
+      ]
+    },
+    {
+      "id": "IR-02",
+      "name": "Probabilistic validation",
+      "charter": [
+        "F-03",
+        "F-04",
+        "F-05",
+        "F-06"
+      ],
+      "rules": [
+        "Update hypotheses as supporting, contradictory or missing evidence changes; allow abstention, revision and rejection.",
+        "Track evidence provenance and dependencies across sensors, agents and locations; do not count duplicated, derived or correlated observations or model agreement as independent corroboration.",
+        "Account for base rates, coverage gaps, multiple testing and asymmetric costs of false positives and false negatives; do not equate concurrency with coordination.",
+        "Report numerical probabilities only with a defined target, appropriate calibration evidence, evaluation scope and uncertainty; otherwise report qualitative uncertainty or unknown.",
+        "Evaluate discrimination, calibration, abstention, errors and time to defensible assessment on representative held-out data with documented limitations."
+      ]
+    },
+    {
+      "id": "IR-03",
+      "name": "Risk-adjusted resource allocation",
+      "charter": [
+        "F-04",
+        "F-06",
+        "F-07"
+      ],
+      "rules": [
+        "Separate assessment confidence from investigation priority and response authorization.",
+        "Prioritize investigative actions using expected defensive value, potential impact, urgency, expected information gain, cost and available capacity; document assumptions and trade-offs.",
+        "Reassess priorities as evidence changes, coordinate across monitoring locations and avoid duplicated investigation; preserve baseline monitoring and escalation for high-impact uncertain cases.",
+        "Require proportionate, authorized defensive actions; an inferred class or probability is not permission to intervene or to accept a taxonomy entry."
+      ]
+    }
+  ],
+  "assessment_dimensions": [
+    "observed_activity",
+    "functional_effect",
+    "causal_relationship",
+    "actor_attribution",
+    "inferred_objective",
+    "composition_hypothesis",
+    "uncertainty",
+    "investigation_priority"
+  ],
+  "evaluation_cases": [
+    {
+      "id": "IR-C01",
+      "requirements": [
+        "IR-01",
+        "IR-02"
+      ],
+      "scenario": "Unrelated malicious activities overlap in time.",
+      "expected": "Do not assert a coordinated composition without independent evidence of the functional relationship."
+    },
+    {
+      "id": "IR-C02",
+      "requirements": [
+        "IR-02"
+      ],
+      "scenario": "Multiple agents report the same underlying observation.",
+      "expected": "Preserve shared provenance; do not inflate certainty by treating the reports as independent."
+    },
+    {
+      "id": "IR-C03",
+      "requirements": [
+        "IR-02"
+      ],
+      "scenario": "Coverage is incomplete and conflicting evidence arrives.",
+      "expected": "Represent uncertainty and contradictions, revise or abstain; do not manufacture a numeric probability."
+    },
+    {
+      "id": "IR-C04",
+      "requirements": [
+        "IR-03"
+      ],
+      "scenario": "A lower-confidence high-impact hypothesis competes with a high-confidence low-impact event.",
+      "expected": "Do not rank solely by confidence; explain priority using risk, urgency, costs and information value."
+    },
+    {
+      "id": "IR-C05",
+      "requirements": [
+        "IR-01",
+        "IR-02",
+        "IR-03"
+      ],
+      "scenario": "New evidence refutes a previously prioritized hypothesis.",
+      "expected": "Revise the assessment and priority, preserve history and reallocate resources without silently changing the taxonomy."
+    },
+    {
+      "id": "IR-C06",
+      "requirements": [
+        "IR-01",
+        "IR-02"
+      ],
+      "scenario": "The system evaluates many locations or candidate classes.",
+      "expected": "Account for multiplicity and common evidence; evaluate false alarms at the relevant system-wide level."
+    }
+  ]
+}

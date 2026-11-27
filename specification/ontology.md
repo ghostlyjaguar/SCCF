@@ -23,3 +23,6 @@ The strategic_property field states what emerges from the relationship. prior_ar
 
 ## Separate incident assessment
 Observed events, supported functional relationships, causal claims, attribution and intent must be separately substantiated. The synthetic fixtures in validation/fixtures.json specify expected assessment outcomes using analyst-supplied evidence labels. They do not constitute a detection algorithm, dataset of real attacks, proof of intent or calibrated confidence score. No class becomes accepted through fixture tests. The mission is governed by FOUNDATION.md.
+
+## Intelligence and prioritization boundary
+The subordinate [intelligence requirements](intelligence-requirements.md) govern future defensive reasoning implementations. Their claim-level uncertainty and risk-adjusted resource allocation requirements do not change class definitions, acceptance statuses or the founding charter.
