@@ -8,13 +8,13 @@ Compare equal-budget fixed ordering, expected-risk ordering and expected value o
 Run `python3 -m unittest discover -s research -p 'test_*.py' -v` and `python3 research/benchmark.py` from the repository root. Results report errors, Brier score, decision loss and evidence count. Twenty fixed seeds support reproducibility only; no statistical significance or generalized benefit is asserted. Next: independent datasets, misspecified likelihoods, dependence, base-rate drift, uncertainty intervals, held-out model evaluations, and preregistered acceptance criteria.
 
 ## Mobile operations
-The proposed workflow runs weekly on the default branch after merge, manually on demand, and on relevant pull requests. Review the Actions job summary from GitHub Mobile or a browser; artifacts expire after 30 days. Failure requires investigation, not an automatic fix or acceptance. Scheduled runs can stop after inactivity. No paid APIs, secrets, production telemetry, automated commits, live scans or financial permissions are configured. Standard public runners are intended; the owner must verify Actions settings and billing. The workflow is bounded to five minutes and one concurrent run per ref.
+The proposed workflow runs weekly on the default branch after merge, manually on demand, and on relevant pull requests. Review the Actions job summary from GitHub Mobile or a browser; artifacts expire after 30 days. Failure requires investigation, not an automatic fix or acceptance. Scheduled runs can stop after inactivity. The workflow uses synthetic data and standard GitHub-hosted runners. It requires no external APIs, secrets, production telemetry, automated commits or live scans. The workflow is bounded to five minutes and one concurrent run per ref.
 
 ## Research roadmap
 1. Establish repeatable synthetic baseline and independent review.
 2. Add public, legally reusable defensive datasets with documented provenance and leakage checks.
 3. Evaluate model-specific performance with explicit budgets, independent scoring, negative results and no secret data.
-4. Test adoption and measurable user value before incurring paid operating expenses.
-5. Propose improvements through reviewable PRs; retain owner control of costs, licensing, publishing and taxonomy acceptance.
+4. Evaluate generalizability, reproducibility and practical defensive utility.
+5. Propose improvements through reviewable PRs; retain owner control of publishing and taxonomy acceptance.
 
-Do not present recurring reruns as new discoveries. Do not claim sponsorship, revenue or empirical effectiveness without evidence.
+Do not present recurring reruns as new discoveries. Do not claim empirical effectiveness without evidence.
