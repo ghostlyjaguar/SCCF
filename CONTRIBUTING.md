@@ -1,0 +1,3 @@
+# Contributing
+
+Open an issue for a proposed class, correction, counterexample or interoperability concern. Include the existing classification ID if applicable, the proposed change, supporting sources, alternative explanations, and a defensive use case. Disclose substantial AI assistance and check all references. For new classes, include a prior-art comparison and exclusion criteria. Submit a pull request only after checking the schema. All contributions require maintainer review. Do not submit restricted, personal, confidential or offensive operational material. Licensing and governance remain provisional until explicitly approved.

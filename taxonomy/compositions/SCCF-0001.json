@@ -1,0 +1,40 @@
+{
+  "id": "SCCF-0001",
+  "name": "DDoS as a Smokescreen",
+  "aliases": [
+    "DaaSS",
+    "DDoS Smokescreen"
+  ],
+  "status": "proposed",
+  "version": "0.1.0",
+  "definition": "A distributed denial-of-service event functions as a diversion associated with another malicious operation, rather than availability loss alone accounting for the entire incident.",
+  "roles": [
+    "disruptive activity",
+    "separate malicious activity"
+  ],
+  "relationship": "diverts",
+  "temporal_constraint": "Contextually related overlap or continuity; timing alone is insufficient.",
+  "evidence_requirements": [
+    "Evidence of both activities",
+    "Corroboration of a functional relationship beyond temporal coincidence",
+    "Consider independent incidents and alternative explanations"
+  ],
+  "exclusion_criteria": [
+    "Standalone denial of service",
+    "Unrelated concurrent incidents without corroborating linkage"
+  ],
+  "defensive_significance": "Maintain independent investigation of anomalous events during service disruption and avoid prematurely closing correlated incidents.",
+  "attack_mappings": [
+    "T1498"
+  ],
+  "references": [
+    {
+      "url": "https://attack.mitre.org/techniques/T1498/",
+      "relevance": "Recognizes distraction as a possible purpose of denial of service."
+    },
+    {
+      "url": "https://mews.sv.cmu.edu/papers/isi-18.pdf",
+      "relevance": "2018 academic description of DDoS as a Smokescreen; establishes prior terminology, not independent validation of this proposed schema."
+    }
+  ]
+}
