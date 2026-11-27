@@ -7,6 +7,9 @@ Compare equal-budget fixed ordering, expected-risk ordering and expected value o
 
 Run `python3 -m unittest discover -s research -p 'test_*.py' -v` and `python3 research/benchmark.py` from the repository root. Results report errors, Brier score, decision loss and evidence count. Twenty fixed seeds support reproducibility only; no statistical significance or generalized benefit is asserted. Next: independent datasets, misspecified likelihoods, dependence, base-rate drift, uncertainty intervals, held-out model evaluations, and preregistered acceptance criteria.
 
+## Phase 2 — robustness testing
+See the [robustness protocol](ROBUSTNESS.md) for stress tests under inaccurate priors, missing, duplicate and conflicting evidence. The original phase 1 baseline remains unchanged.
+
 ## Mobile operations
 The proposed workflow runs weekly on the default branch after merge, manually on demand, and on relevant pull requests. Review the Actions job summary from GitHub Mobile or a browser; artifacts expire after 30 days. Failure requires investigation, not an automatic fix or acceptance. Scheduled runs can stop after inactivity. The workflow uses synthetic data and standard GitHub-hosted runners. It requires no external APIs, secrets, production telemetry, automated commits or live scans. The workflow is bounded to five minutes and one concurrent run per ref.
 
