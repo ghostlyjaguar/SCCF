@@ -24,7 +24,8 @@ jobs:
       - name: Generate benchmark results
         run: |
           python3 research/benchmark.py
-          cat research-results/report.md >> "$GITHUB_STEP_SUMMARY"
+          python3 research/robustness.py
+          cat research-results/report.md research-results/robustness.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with:
           name: sccf-research-report
