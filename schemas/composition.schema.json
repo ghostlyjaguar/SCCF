@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "SCCF composition draft",
+  "title": "SCCF composition draft v0.2",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -113,6 +113,136 @@
       },
       "minItems": 0,
       "uniqueItems": true
+    },
+    "strategic_property": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prior_art": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "url",
+          "distinction"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://"
+          },
+          "distinction": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "graph": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nodes",
+        "edges"
+      ],
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "role"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_-]*$"
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "edges": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source",
+              "target",
+              "relationship",
+              "temporal_relation"
+            ],
+            "properties": {
+              "source": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_-]*$"
+              },
+              "target": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_-]*$"
+              },
+              "relationship": {
+                "enum": [
+                  "diverts",
+                  "conceals",
+                  "enables",
+                  "suppresses",
+                  "amplifies",
+                  "deceives"
+                ]
+              },
+              "temporal_relation": {
+                "enum": [
+                  "before",
+                  "overlaps",
+                  "after",
+                  "variable",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "review": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "review_url",
+        "counterexample_url",
+        "decision_rationale"
+      ],
+      "properties": {
+        "review_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "counterexample_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "decision_rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   },
   "required": [
@@ -129,6 +259,28 @@
     "roles",
     "evidence_requirements",
     "exclusion_criteria",
-    "attack_mappings"
+    "attack_mappings",
+    "strategic_property",
+    "prior_art",
+    "graph",
+    "review"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "accepted"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "type": "object"
+          }
+        }
+      }
+    }
   ]
 }

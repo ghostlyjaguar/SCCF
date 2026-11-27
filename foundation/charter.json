@@ -1,0 +1,36 @@
+{
+  "charter_version": "1.0.0",
+  "project": "SCCF",
+  "mission": "Classify the emergent strategic functions of relationships among cyberattack activities, rather than merely listing their individual technical mechanisms, to enable evidence-based defensive reasoning by humans and AI systems.",
+  "principles": [
+    {
+      "id": "F-01",
+      "rule": "The primary classification unit is a repeatable strategic composition of at least two distinct adversarial activities; an isolated technique, vulnerability, alert or indicator is not a composition."
+    },
+    {
+      "id": "F-02",
+      "rule": "A composition class identifies the functional relationship and emergent strategic property, not merely a sequence, simultaneous events, or a list of techniques."
+    },
+    {
+      "id": "F-03",
+      "rule": "Temporal association, functional effect, causal dependency, actor attribution and strategic intent are separate claims. Timing alone never establishes coordination or intent."
+    },
+    {
+      "id": "F-04",
+      "rule": "Classify with public evidence, explicit uncertainty, alternative explanations, exclusion criteria and independent review. Novelty is a hypothesis until checked against prior art."
+    },
+    {
+      "id": "F-05",
+      "rule": "Provide persistent identifiers, versioned definitions, public machine-readable representations and traceable evidence. Preserve history and distinguish proposed classes from accepted classes."
+    },
+    {
+      "id": "F-06",
+      "rule": "Enable humans and AI to read, challenge and propose revisions; no autonomous acceptance or governance changes. The repository owner retains final authority."
+    },
+    {
+      "id": "F-07",
+      "rule": "Remain a defensive classification knowledge base complementing existing standards. Detection engines, websites, APIs and integrations are subordinate to the taxonomy; no offensive operational guidance."
+    }
+  ],
+  "amendment_policy": "No ordinary change may alter this charter or foundational invariants. A separate public amendment proposal, explicit repository-owner approval and documented rationale are required. Preserve all prior versions; no AI agent may approve an amendment."
+}

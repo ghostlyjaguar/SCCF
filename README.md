@@ -1,14 +1,18 @@
 # Strategic Cyberattack Composition Framework (SCCF)
 
-**Status: working draft v0.1.0 — independent research proposal, not an industry standard.**
+**Status: working draft v0.2.0 — independent research proposal, not an industry standard.**
 
-SCCF aims to classify the strategic relationships among adversarial activities for defensive threat analysis. It complements MITRE ATT&CK and Attack Flow; it does not claim to replace them or establish novelty.
+SCCF classifies the emergent strategic functions of relationships among adversarial activities for defensive threat analysis. The [founding charter](FOUNDATION.md) fixes the project's mission and scope. It complements MITRE ATT&CK and Attack Flow; it does not claim to replace them or establish novelty.
 
-Start with [the specification](specification/ontology.md), [the candidate catalog](taxonomy/compositions/SCCF-0001.json), and [contribution rules](CONTRIBUTING.md). AI agents should consult [AGENTS.md](AGENTS.md).
+Start with the [founding charter](FOUNDATION.md), [the specification](specification/ontology.md), [the candidate catalog](taxonomy/compositions/SCCF-0001.json), and [contribution rules](CONTRIBUTING.md). AI agents should consult [AGENTS.md](AGENTS.md).
 
 ## Validate
 
-Install Python 3.10+ and `jsonschema` (`python -m pip install jsonschema`), then run `python validation/validate.py` from the repository root. Schema validation checks structure, not the accuracy of claims.
+Install Python 3.10+ and `jsonschema` (`python -m pip install jsonschema`), then run `python validation/validate.py` from the repository root. Then run `python -m unittest discover -s validation -p 'test_*.py'`. These checks validate structure and synthetic decision-policy examples, not the accuracy of real incidents.
+
+## AI and research feedback
+
+Use the [machine-readable charter](foundation/charter.json) and [composition schema](schemas/composition.schema.json). Submit evidence-backed feedback through [issues](https://github.com/ghostlyjaguar/SCCF/issues) or a pull request. Proposed classes are not accepted by automation. Public visibility does not guarantee AI adoption.
 
 ## Research and reuse
 

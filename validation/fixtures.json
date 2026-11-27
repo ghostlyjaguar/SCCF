@@ -1,0 +1,50 @@
+[
+  {
+    "id": "standalone",
+    "description": "Only disruption is substantiated.",
+    "activities": 1,
+    "link": "unknown",
+    "alternatives": "not_evaluated",
+    "expected": "insufficient_evidence"
+  },
+  {
+    "id": "coincidence",
+    "description": "Two malicious activities occur at the same time; no functional relationship is corroborated.",
+    "activities": 2,
+    "link": "unknown",
+    "alternatives": "not_evaluated",
+    "expected": "hypothesis"
+  },
+  {
+    "id": "alternative_open",
+    "description": "A functional relationship is supported, but independent incidents remain a credible unresolved explanation.",
+    "activities": 2,
+    "link": "supported",
+    "alternatives": "unresolved",
+    "expected": "hypothesis"
+  },
+  {
+    "id": "supported",
+    "description": "Two activities are substantiated, a functional relationship is independently corroborated, and credible alternatives have been evaluated and resolved.",
+    "activities": 2,
+    "link": "supported",
+    "alternatives": "resolved",
+    "expected": "supported"
+  },
+  {
+    "id": "contradicted",
+    "description": "Evidence affirmatively refutes the claimed relationship.",
+    "activities": 2,
+    "link": "contradicted",
+    "alternatives": "resolved",
+    "expected": "contradicted"
+  },
+  {
+    "id": "conflict",
+    "description": "Supporting and opposing evidence remains unresolved.",
+    "activities": 2,
+    "link": "conflicting",
+    "alternatives": "unresolved",
+    "expected": "hypothesis"
+  }
+]

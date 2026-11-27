@@ -1,4 +1,4 @@
-# SCCF specification v0.1.0 (draft)
+# SCCF specification v0.2.0 (draft)
 
 ## Unit of classification
 A strategic composition class describes a repeatable functional relationship among two or more adversarial activities. A class is separate from an incident instance, an individual technique, and an inferred attacker objective.
@@ -15,3 +15,11 @@ Class status: `proposed`, `reviewed`, `accepted`, `deprecated`. Accepted means a
 
 ## Interoperability
 Map constituent activities to ATT&CK where supported, without equating a strategic class with an ATT&CK technique. Evaluate Attack Flow and STIX interoperability in a future version; this draft is not a STIX extension.
+
+## Structured graph (v0.2)
+Every class has at least two distinct role nodes and one directed functional edge. Each edge has source and target role IDs, a relationship from the controlled vocabulary, and an independent temporal relation. Self-loops, missing endpoints, disconnected roles and duplicate directed relationship claims are invalid. The primary relationship must appear in the graph. The roles list is a readable projection of node roles. These graphs describe abstract class definitions, not actual attack instructions or observed incident events.
+
+The strategic_property field states what emerges from the relationship. prior_art records existing work and the limited distinction claimed. review is null for unreviewed candidates; accepted entries require a public review record, a public counterexample and decision rationale. This is a schema requirement, not proof that review occurred.
+
+## Separate incident assessment
+Observed events, supported functional relationships, causal claims, attribution and intent must be separately substantiated. The synthetic fixtures in validation/fixtures.json specify expected assessment outcomes using analyst-supplied evidence labels. They do not constitute a detection algorithm, dataset of real attacks, proof of intent or calibrated confidence score. No class becomes accepted through fixture tests. The mission is governed by FOUNDATION.md.

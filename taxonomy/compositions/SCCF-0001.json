@@ -6,7 +6,7 @@
     "DDoS Smokescreen"
   ],
   "status": "proposed",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "definition": "A distributed denial-of-service event functions as a diversion associated with another malicious operation, rather than availability loss alone accounting for the entire incident.",
   "roles": [
     "disruptive activity",
@@ -36,5 +36,41 @@
       "url": "https://mews.sv.cmu.edu/papers/isi-18.pdf",
       "relevance": "2018 academic description of DDoS as a Smokescreen; establishes prior terminology, not independent validation of this proposed schema."
     }
-  ]
+  ],
+  "strategic_property": "Diversionary concealment: a disruptive activity functions to redirect defensive attention away from a separate malicious activity. This property is relational, not inherent to network flooding.",
+  "prior_art": [
+    {
+      "url": "https://attack.mitre.org/techniques/T1498/",
+      "distinction": "ATT&CK maps the denial-of-service mechanism and acknowledges distraction; this candidate assigns a separate identifier to the functional relationship."
+    },
+    {
+      "url": "https://dblp.uni-trier.de/rec/conf/isi/RicksTT18.html",
+      "distinction": "The term and detection problem predate SCCF. SCCF proposes a reusable classification record; it does not claim discovery of the attack."
+    },
+    {
+      "url": "https://ctid.mitre.org/projects/attack-flow/",
+      "distinction": "Attack Flow describes connected activities; this entry proposes a named strategic relationship class. Exact overlap and interoperability require further review."
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "a",
+        "role": "disruptive activity"
+      },
+      {
+        "id": "b",
+        "role": "separate malicious activity"
+      }
+    ],
+    "edges": [
+      {
+        "source": "a",
+        "target": "b",
+        "relationship": "diverts",
+        "temporal_relation": "overlaps"
+      }
+    ]
+  },
+  "review": null
 }
